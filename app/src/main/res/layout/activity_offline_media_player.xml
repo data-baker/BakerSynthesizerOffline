@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OfflineMediaPlayerActivity">
+
+    <TextView
+        android:id="@+id/tip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="声音选择："
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/voice_1"
+        style="@style/style_text"
+        android:text="标准女声"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/voice_2"
+        app:layout_constraintTop_toBottomOf="@id/tip1" />
+
+    <ImageView
+        android:id="@+id/checkbox_1"
+        style="@style/style_check"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/voice_1"
+        app:layout_constraintRight_toRightOf="@id/voice_1" />
+
+    <TextView
+        android:id="@+id/voice_2"
+        style="@style/style_text"
+        android:text="甜美女声"
+        app:layout_constraintLeft_toRightOf="@id/voice_1"
+        app:layout_constraintRight_toLeftOf="@id/voice_3"
+        app:layout_constraintTop_toBottomOf="@id/tip1" />
+
+    <ImageView
+        android:id="@+id/checkbox_2"
+        style="@style/style_check"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/voice_2"
+        app:layout_constraintRight_toRightOf="@id/voice_2" />
+
+    <TextView
+        android:id="@+id/voice_3"
+        style="@style/style_text"
+        android:text="小君儿童"
+        app:layout_constraintLeft_toRightOf="@id/voice_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip1" />
+
+    <ImageView
+        android:id="@+id/checkbox_3"
+        style="@style/style_check"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/voice_3"
+        app:layout_constraintRight_toRightOf="@id/voice_3" />
+
+    <TextView
+        android:id="@+id/voice_4"
+        style="@style/style_text"
+        android:text="标准男声"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/voice_5"
+        app:layout_constraintTop_toBottomOf="@id/voice_1" />
+
+    <ImageView
+        android:id="@+id/checkbox_4"
+        style="@style/style_check"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/voice_4"
+        app:layout_constraintRight_toRightOf="@id/voice_4" />
+
+    <TextView
+        android:id="@+id/voice_5"
+        style="@style/style_text"
+        android:text="磁性男声"
+        app:layout_constraintLeft_toRightOf="@id/voice_4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/voice_1" />
+
+    <ImageView
+        android:id="@+id/checkbox_5"
+        style="@style/style_check"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/voice_5"
+        app:layout_constraintRight_toRightOf="@id/voice_5" />
+
+    <TextView
+        android:id="@+id/tip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="文本内容："
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/voice_5" />
+
+    <EditText
+        android:id="@+id/edit_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="欢迎使用标贝智能合成语音服务！盘古时期，女娲补天后留下女娲石，200年以后，女娲石上竟然长出了一颗仙草，所有人都在惊叹的时候这颗仙草已经化成人形。"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip2" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_play"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/pauseOrPlay"
+        app:layout_constraintTop_toBottomOf="@id/edit_content" />
+
+    <Button
+        android:id="@+id/pauseOrPlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_pause"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@id/start"
+        app:layout_constraintRight_toLeftOf="@id/stop"
+        app:layout_constraintTop_toBottomOf="@id/edit_content" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_stop"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@id/pauseOrPlay"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_content" />
+
+    <Button
+        android:id="@+id/isPlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_is_play"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/playDuration"
+        app:layout_constraintTop_toBottomOf="@id/start" />
+
+    <Button
+        android:id="@+id/playDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_play_duration"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@id/isPlay"
+        app:layout_constraintRight_toLeftOf="@id/duration"
+        app:layout_constraintTop_toBottomOf="@id/start" />
+
+    <Button
+        android:id="@+id/duration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/string_duration"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toRightOf="@id/playDuration"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start" />
+
+    <TextView
+        android:id="@+id/tip3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="状态and结果："
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/isPlay" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fadeScrollbars="false"
+        android:scrollbarFadeDuration="1000"
+        android:scrollbarStyle="insideOverlay"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip3"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

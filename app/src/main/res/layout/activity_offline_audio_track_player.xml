@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OfflineAudioTrackPlayerActivity">
+
+    <TextView
+        android:id="@+id/tip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:text="声音选择："
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/voice_1"
+        style="@style/style_text"
+        android:text="标准女声"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip1"
+        app:layout_constraintRight_toLeftOf="@id/voice_2"
+        />
+    <ImageView
+        android:id="@+id/checkbox_1"
+        android:visibility="visible"
+        style="@style/style_check"
+        app:layout_constraintBottom_toBottomOf="@id/voice_1"
+        app:layout_constraintRight_toRightOf="@id/voice_1"/>
+
+    <TextView
+        android:id="@+id/voice_2"
+        style="@style/style_text"
+        android:text="甜美女声"
+        app:layout_constraintLeft_toRightOf="@id/voice_1"
+        app:layout_constraintTop_toBottomOf="@id/tip1"
+        app:layout_constraintRight_toLeftOf="@id/voice_3"
+        />
+    <ImageView
+        android:id="@+id/checkbox_2"
+        android:visibility="gone"
+        style="@style/style_check"
+        app:layout_constraintBottom_toBottomOf="@id/voice_2"
+        app:layout_constraintRight_toRightOf="@id/voice_2"/>
+
+    <TextView
+        android:id="@+id/voice_3"
+        style="@style/style_text"
+        android:text="小君儿童"
+        app:layout_constraintLeft_toRightOf="@id/voice_2"
+        app:layout_constraintTop_toBottomOf="@id/tip1"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <ImageView
+        android:id="@+id/checkbox_3"
+        android:visibility="gone"
+        style="@style/style_check"
+        app:layout_constraintBottom_toBottomOf="@id/voice_3"
+        app:layout_constraintRight_toRightOf="@id/voice_3"/>
+
+    <TextView
+        android:id="@+id/voice_4"
+        style="@style/style_text"
+        android:text="标准男声"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/voice_1"
+        app:layout_constraintRight_toLeftOf="@id/voice_5"
+        />
+    <ImageView
+        android:id="@+id/checkbox_4"
+        android:visibility="gone"
+        style="@style/style_check"
+        app:layout_constraintBottom_toBottomOf="@id/voice_4"
+        app:layout_constraintRight_toRightOf="@id/voice_4"/>
+
+    <TextView
+        android:id="@+id/voice_5"
+        style="@style/style_text"
+        android:text="磁性男声"
+        app:layout_constraintLeft_toRightOf="@id/voice_4"
+        app:layout_constraintTop_toBottomOf="@id/voice_1"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <ImageView
+        android:id="@+id/checkbox_5"
+        android:visibility="gone"
+        style="@style/style_check"
+        app:layout_constraintBottom_toBottomOf="@id/voice_5"
+        app:layout_constraintRight_toRightOf="@id/voice_5"/>
+
+
+    <TextView
+        android:id="@+id/tip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:text="文本内容："
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/voice_4"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/edit_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="您好，我是标贝科技为您打造的银行专属理财顾问。我可以为您解答银行业务方面的问题，包括存款、外汇、债券、基金、理财、保险等各种业务，并根据您的具体情况和需求，为您量身打造专属的财务增值服务。"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:maxLength="230"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_content">
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:text="@string/string_synthesis_play"
+            />
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:text="@string/string_stop"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

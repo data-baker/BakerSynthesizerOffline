@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">离线合成</string>
+    <string name="string_audio_track_player_offline">离线SDK无播放器示例</string>
+    <string name="string_media_track_player_offline">离线SDK含播放器示例</string>
+
+    <string name="string_synthesis_play">合成播放</string>
+    <string name="string_play">开始合成播放</string>
+    <string name="string_pause">暂停/播放</string>
+    <string name="string_stop">停止播放</string>
+    <string name="string_is_play">当前播放状态</string>
+    <string name="string_play_duration">获取播放进度</string>
+    <string name="string_duration">音频总长度</string>
+</resources>
