@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baker.synthesis.offline.BakerMediaCallback;
 import com.baker.synthesis.offline.OfflineBakerSynthesizer;
@@ -95,7 +96,15 @@ public class OfflineMediaPlayerActivity extends AppCompatActivity implements Vie
         }
 
         @Override
-        public void onError(int errorCode, String errorMsg, String traceId) {
+        public void onError(final int errorCode, final String errorMsg, String traceId) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(OfflineMediaPlayerActivity.this,
+                            "errorCode==" + errorCode + ",errorMsg==" + errorMsg,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
             Log.d("Offline","--onError-- errorCode=" + errorCode + ", errorMsg=" + errorMsg + ",traceId==" + traceId);
         }
 

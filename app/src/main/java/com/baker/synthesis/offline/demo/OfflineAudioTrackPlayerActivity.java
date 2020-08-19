@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.baker.synthesis.offline.BakerCallback;
 import com.baker.synthesis.offline.OfflineBakerSynthesizer;
@@ -113,14 +114,14 @@ public class OfflineAudioTrackPlayerActivity extends AppCompatActivity implement
         @Override
         public void onTaskFailed(final int errorCode, final String errorMsg, String traceId) {
             Log.d("Offline","errorCode==" + errorCode + ",errorMsg==" + errorMsg);
-//            runOnUiThread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    Toast.makeText(OfflineAudioTrackPlayerActivity.this,
-//                            "errorCode==" + errorCode + ",errorMsg==" + errorMsg,
-//                            Toast.LENGTH_SHORT).show();
-//                }
-//            });
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(OfflineAudioTrackPlayerActivity.this,
+                            "errorCode==" + errorCode + ",errorMsg==" + errorMsg,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     };
 
