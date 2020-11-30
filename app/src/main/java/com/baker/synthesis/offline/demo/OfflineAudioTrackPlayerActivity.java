@@ -140,10 +140,9 @@ public class OfflineAudioTrackPlayerActivity extends AppCompatActivity implement
         /**********************以下是选填参数**************************/
         //设置播放的语速，在50～200之间，不传时默认为105
         bakerSynthesizer.setSpeed(105);
-        //设置语音的音量，在0～9之间（只支持整型值），不传时默认值为5
-        bakerSynthesizer.setVolume(5);
-        //设置语音的音调，取值0-9，不传时默认为5中语调
-//        bakerSynthesizer.setPitch(5);
+        //设置语音的音量，在50～200之间（只支持整型值），不传时默认值为105
+        bakerSynthesizer.setVolume(105);
+        
         /**
          * 可不填，不填时默认为4, 16K采样率的pcm格式
          * audiotype=4 ：返回16K采样率的pcm格式
