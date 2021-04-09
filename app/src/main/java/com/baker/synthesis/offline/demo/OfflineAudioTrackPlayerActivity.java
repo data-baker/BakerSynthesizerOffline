@@ -45,7 +45,7 @@ public class OfflineAudioTrackPlayerActivity extends AppCompatActivity implement
         //初始化sdk
         bakerSynthesizer = new OfflineBakerSynthesizer(OfflineAudioTrackPlayerActivity.this,
                 SharedPreferencesUtil.getClientId(),
-                SharedPreferencesUtil.getClientSecret());
+                SharedPreferencesUtil.getClientSecret(), true);
         audioTrackPlayer = new AudioTrackPlayer();
     }
 

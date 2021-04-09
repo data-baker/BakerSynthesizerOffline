@@ -15,8 +15,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baker.synthesis.offline.BakerConstants;
 import com.baker.synthesis.offline.BakerMediaCallback;
 import com.baker.synthesis.offline.OfflineBakerSynthesizer;
+import com.baker.synthesis.offline.util.WriteLog;
 
 /**
  * @author hsj55
@@ -45,10 +47,13 @@ public class OfflineMediaPlayerActivity extends AppCompatActivity implements Vie
 
         initView();
 
+        BakerConstants.setIsDebug(true);
+        WriteLog.openStream(this);
+
         //初始化sdk
         bakerSynthesizer = new OfflineBakerSynthesizer(OfflineMediaPlayerActivity.this,
                 SharedPreferencesUtil.getClientId(),
-                SharedPreferencesUtil.getClientSecret());
+                SharedPreferencesUtil.getClientSecret(), true);
     }
 
     private void initView() {
