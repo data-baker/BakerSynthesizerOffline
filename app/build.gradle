@@ -17,6 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    //加载so库
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
