@@ -11,10 +11,38 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        def alias = "key0"
+        def password = "123456789"
+        def filePath = "debug.jks"  //签名文件路径
+
+        debug {
+            keyAlias alias
+            keyPassword password
+            storeFile file(filePath)
+            storePassword(password)
+        }
+        release {
+            keyAlias alias
+            keyPassword password
+            storeFile file(filePath)
+            storePassword(password)
+        }
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
